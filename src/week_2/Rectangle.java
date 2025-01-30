@@ -10,8 +10,15 @@ public class Rectangle {
         public String toString() {
             return "Rectangle has " + v1 + " as the top-left point and " + v2 + " as the bottom-right point.";
         }
-
-        public float area() {
-            
+        public double calculateArea() {
+            double width = v2.getX() - v1.getX();
+            double height = v2.getY() - v1.getY();
+            return width * height;
+        }
+        public void shiftBy(Vector2D v) {
+            v1.setX(v1.getX() + v.getX());
+            v1.setY(v1.getY() + v.getY());
+            v2.setX(v2.getX() - v.getX());
+            v2.setY(v2.getY() - v.getY());
         }
 }
