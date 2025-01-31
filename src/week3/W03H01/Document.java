@@ -1,17 +1,23 @@
 package week3.W03H01;
 
 public class Document {
+    private static int nextId = 0;
     private final int documentId;
     private final String title;
     private final String description;
     private final String content;
+    private final Date releaseDate;
+    private final Author author;
 
-    public Document(int documentId, String title, String description, String content) {
-        this.documentId = documentId;
+    public Document(String title, String description, String content, Date releaseDate, Author author) {
+        this.documentId = nextId++;
         this.title = title;
         this.description = description;
         this.content = content;
+        this.releaseDate = releaseDate;
+        this.author = author;
     }
+
     public int getDocumentId() {
         return documentId;
     }
@@ -24,6 +30,8 @@ public class Document {
     public String getContent() {
         return content;
     }
+    public Date getReleaseDate() { return releaseDate; }
+    public Author getAuthor() { return author; }
 
     public boolean equals(Document otherDocument) {
         return documentId == otherDocument.documentId;
