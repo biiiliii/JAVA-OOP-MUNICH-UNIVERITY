@@ -33,8 +33,15 @@ public class Document {
     public Date getReleaseDate() { return releaseDate; }
     public Author getAuthor() { return author; }
 
+    public static int numberOfCreatedDocuments() { return nextId; }
+
     public boolean equals(Document otherDocument) {
         return documentId == otherDocument.documentId;
     }
-
+    public String toString() { return title + " " + releaseDate + " " + description; }
+    public String toPrintText() { return title + "\n" +
+            author.toString() + "\n" +
+            description + "\n" +
+            releaseDate.toString();
+    }
 }
