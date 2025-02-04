@@ -1,4 +1,4 @@
-package week3.W03H01;
+package week_3.W03H01;
 
 public class Review {
     private static int nextId = 0;
